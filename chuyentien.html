@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<h2>Calculator</h2>
+<body>
+
+    <div>
+       <span class="inplabel">Amuont:</span> 
+       <input type="text" id="ok">
+   </div>
+   <div>
+    <span class="inplabel">FromCrrency:</span> 
+    <select type="text" id="ko">
+    <option value="VND">VND</option>
+    <option value="USD">USD</option>
+
+        
+    </select><div>
+        <span class="inplabel">ToCrrency:</span> 
+        
+        <select type="text" id="oko">
+    <option value="VND">VND</option>
+    <option value="USD">USD</option>
+   
+    </select>
+    <br>
+    <input type="button" value="Convert" onclick="ct()">
+    <div id="chuyen"></div>
+<script>
+    function ct() {
+        let a = document.getElementById("ok").value;
+        let b = document.getElementById("ko").value;
+        let c = document.getElementById("oko").value;
+        g = parseInt(a);
+        if (b == "VND") {
+            if (c == "VND") {
+                document.getElementById("chuyen").innerHTML = g;
+            } else {
+                if (c == "USD") {
+                    document.getElementById("chuyen").innerHTML = g / 23000;
+                } else document.getElementById("chuyen").innerHTML = g / 30000;
+            }
+        }
+
+        if (b == "USD") {
+            if (c == "VND") {
+                document.getElementById("chuyen").innerHTML = g * 23000;
+            } else {
+                if (c == "USD") {
+                    document.getElementById("chuyen").innerHTML = g;
+                } else {
+                    document.getElementById("chuyen").innerHTML = g * 2 / 3;
+                }
+                if (b == "EUR") {
+                    if (c == "VND") {
+                        document.getElementById("chuyen").innerHTML = g * 30000;
+                    } else {
+                        if (c == "USD") {
+                            document.getElementById("chuyen").innerHTML = g * 3 / 2;
+                        } else document.getElementById("chuyen").innerHTML = g ;
+
+
+                    }
+                }
+            }
+        }
+    }
+
+</script>
+
+</body>
+</html>
