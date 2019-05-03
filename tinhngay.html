@@ -1,0 +1,46 @@
+<html> 
+<head>
+	
+<title>Ngo Sy Bon</title>
+
+</head>
+<body>
+      <div>
+       <span class="inplabel">Nhập tháng:</span>
+       <input type="number" id="ok" >
+    </div>
+    <div>
+    	<br>
+    <input type="button" value="Tính số ngày" onclick="hihi()">
+    <div id="ko"></div>
+    </div>
+    <script> 
+    	function hihi() {
+        let a = parseInt(document.getElementById("ok").value);
+        switch (a)
+        {
+        	case 1:
+        	case 3:
+        	case 5:
+        	case 7:
+            case 8:
+            case 10:
+            case 12:
+
+        	document.getElementById("ko").innerHTML="Có 30 ngày";
+        	break;
+        	case 4:
+        	case 6:
+        	case 9:
+        	case 11:
+            
+
+        	document.getElementById("ko").innerHTML="Có 31 ngày";
+        	case 2:
+        	document.getElementById("ko").innerHTML="Có 28 ngày vào năm thường và 29 ngày vào năm nhuận";
+        	break;
+
+
+        }
+}
+</script>
