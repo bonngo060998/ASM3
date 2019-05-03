@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html> 
+<head>
+	
+<title>Ngo Sy Bon</title>
+
+</head>
+<body>
+<script> 
+let inputa;
+let inputb;
+          
+          inputa = prompt("Nhập cân nặng(kg)");
+          inputb = prompt("Nhập chiều cao(m)");
+         
+          let a = parseInt(inputa);
+          let b = parseInt(inputb);
+           let bmi = a/(b*2);
+          if (bmi < 18)
+    document.write("Chỉ cố IMB được phân loại là Underweight");
+else if (bmi < 25.0)
+    document.write("Chỉ cố IMB được phân loại là Normal");
+else if (bmi < 30.0)
+    document.write("Chỉ cố IMB được phân loại là Overweight");
+else
+    document.write("Chỉ cố IMB được phân loại là Obese");
+         
+          </script>
+</body>
+</html>
