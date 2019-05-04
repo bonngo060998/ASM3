@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html> 
+<head>
+	
+<title>Ngo Sy Bon</title>
+
+</head>
+<body>
+<script> 
+let inputa;
+let inputb;
+let inputc;
+
+
+          
+          inputa = prompt("Nhập điểm bài kiểm tra ");
+          inputb = prompt("Nhập điểm thi giữa kÌ ");
+          inputc = prompt("Nhập điểm thi cuối kì");
+         
+          let a = parseInt(inputa);
+          let b = parseInt(inputb);
+          let c = parseInt(inputc);
+            let d = (a+b+c)/3;
+          
+
+          
+         if (d>=8 && d<=10) {
+  alert('Học lực của bạn là giỏi');
+} 
+else if (d>=6.5 && d<=7.9)  {
+	alert('Học lực của bạn là khá');
+     
+}
+else if (d>=5 && d<=6.4)  {
+	alert('Học lực của bạn là trung bình');
+     
+}
+ else {
+     alert('Học lực của bạn là yếu');
+}
+</script>
