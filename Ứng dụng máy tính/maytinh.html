@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style type="text/css" media="screen">
+	#f {
+		margin-left: 450px;
+		margin-right: 450px;
+	}		
+	</style>
+	<title>NguyenDucAnh</title>
+</head>
+<body>
+	<form id="f" name="cc">
+		<fieldset>
+			<legend style=" color:red;"> Máy Tính </legend>
+		<input type="number" id="sd" name="START">
+		<input type="number" id="sc" name="END">
+		<br/>
+		<br/>
+		<input type="button" onclick="cong()" value="Addition(+)">
+		<input type="button" onclick="tru()" value="Subtraction(-)">
+		<input type="button" onclick="nhan()" value="Multiplication(x)">
+		<input type="button" onclick="chia()" value="Division(/)">
+		<br/>
+		<input type="reset" value="AC">
+	</fieldset>
+	</form>
+	<script>
+		function cong(){
+			var a = document.forms["cc"]["sd"].value;
+			var b = document.forms["cc"]["sc"].value;
+			  let k = parseInt(a);
+			  let k1 = parseInt(b);
+			var kq = k + k1;
+			document.write("kết quả là " +kq);
+		}
+		function tru(){
+			var a = document.forms["cc"]["sd"].value;
+			var b = document.forms["cc"]["sc"].value;
+			  let k = parseInt(a);
+			  let k1 = parseInt(b);
+			var kq = k - k1;
+			document.write("kết quả là " +kq);
+		}
+				function nhan(){
+			var a = document.forms["cc"]["sd"].value;
+			var b = document.forms["cc"]["sc"].value;
+			  let k = parseInt(a);
+			  let k1 = parseInt(b);
+			var kq = k*k1;
+			document.write("kết quả là " +kq);
+		}		function chia(){
+			var a = document.forms["cc"]["sd"].value;
+			var b = document.forms["cc"]["sc"].value;
+			  let k = parseInt(a);
+			  let k1 = parseInt(b);
+			var kq = k/k1;
+			document.write("kết quả là " +kq);
+		}
+		
+	</script>
+</body>
+</html>
