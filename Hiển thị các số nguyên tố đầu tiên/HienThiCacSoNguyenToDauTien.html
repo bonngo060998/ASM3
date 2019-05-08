@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form method = "get" action="">
+    Nhập vào 1 số: <input type="text" id="number" value="20">
+    <input type="button" value="In Kết Quả" onclick="printSnt()">
+</form>
+<div id="result"></div>
+
+<script>
+    function kiemTraSnt(num) {
+        let flag = true;
+        if(num<2){
+            flag = false;
+        }else if(num ===2){
+            flag = true;
+        }else if(num % 2 ===0){
+            flag = false;
+        }else{
+            for(let i =3; i < Math.sqrt(num); i+=2){
+                if(num%i ===0){
+                    flag = false;
+                    break;
+                }
+            }
+        }
+        return flag;
+    }
+
+    function printSnt() {
+        let isNumber = document.getElementById('number').value;
+        isNumber = parseInt(isNumber);
+        let text = "";
+        for (var i =1; i <= isNumber; i++){
+            if(kiemTraSnt(i)){
+                text = text + i + "<br/>";
+            }
+        }
+        document.getElementById('result').innerHTML = text;
+    }
+</script>
+</body>
+</html>
