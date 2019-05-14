@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function</title>
+    
+</head>
+<body>
+<script>
+    let number1=parseInt(prompt("Nhập vào số đầu tiên: "));
+    let number2=parseInt(prompt("Nhập vào số thứ hai: "));
+    function addNumber(number1,number2){
+        let sum=number1+number2;
+        if(number1>number2)
+        alert("Số lớn hơn là: " + number1);
+        else if(number1<=number2)
+        alert("Tổng hai số là: " +sum);
+        else
+        alert("Vui lòng nhập lại hai số");
+    }
+    addNumber(number1,number2);
+    </script>
+    </body>

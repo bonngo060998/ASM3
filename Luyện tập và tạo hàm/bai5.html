@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>bai05</title>
+</head>
+<body onload="addstar()">
+
+</body>
+<script>
+   let star = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe","Regulus"];
+   let cons = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major","Leo"];
+
+   function addstar() {
+       let starname = prompt("Nhập tên 1 sao để tìm chòm sao tương ứng");
+       searchcons(starname);
+   }
+
+   function searchcons(text) {
+
+       for (let i = 0; i < star.length; i++){
+           if (star[i] == text){
+               alert("Chòm sao của " + text +" là: "+ cons[i]);
+               break;
+           }else{
+               alert("Ko tìm thấy");
+           }
+       }
+   }
+</script>
+</html>
