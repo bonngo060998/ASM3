@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+         <meta charset="UTF-8">
+         <title>Rectangle</title>
+     </head>
+     <body>
+            <canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;">
+     </body>
+</html>
+<script>
+    function Rectangle(chieudai,chieurong){
+        this.chieudai = chieudai;
+        this.chieurong = chieurong;
+    this.getChieudai= function(){
+            return chieudai;
+    };
+    this.getChieurong= function(){
+            return chieurong;
+    };
+    this.getDientich= function(){
+            return chieudai*chieurong;
+    };
+    this.getChuvi= function(){
+            return (chieudai+chieurong)*2;
+    };
+    };
+    let rectangle= new Rectangle(7,4);
+    let chieudai = rectangle.getChieudai();
+    let chieurong = rectangle.getChieurong(); // 2
+    let chuvi = rectangle.getChuvi(); // 12.566370614359172 
+    let dientich = rectangle.getDientich();
+    alert("Diện tích là: " + dientich + "; Chu vi là: " + chuvi);
+    let ctx = document.getElementById("myCanvas").getContext("2d");
+    ctx.fillStyle = "#F7FE2E";
+    ctx.fillRect(7,4,length,width);
+    </script>
