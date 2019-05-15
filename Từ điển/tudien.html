@@ -17,18 +17,18 @@
 </body>
 
 <script>
-    let el = ['family', 'job', 'money', 'football' ];
-    let vn = ['gia đình', 'công việc', 'tiền', 'bóng đá'];
+    let english = ['family', 'job', 'love', 'football' ];
+    let vietnam = ['gia đình', 'công việc', 'tình yêu', 'bóng đá'];
 
     function search_element_to_array() {
         let text = document.getElementById('txtValue').value;
 
 
 
-        for (let i=0;i < el.length; i++){
+        for (let i=0;i < english.length; i++){
 
-            if(text == el[i]) {
-                document.getElementById('result').innerHTML = vn[i];
+            if(text == english[i]) {
+                document.getElementById('result').innerHTML = vietnam[i];
                 break;
             } else{
                 document.getElementById('result').innerHTML="Từ này không có trong từ điển. Vui lòng nhập lại";
