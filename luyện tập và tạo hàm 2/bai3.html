@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Function</title>
+</head>
+<script>
+    var f=[]
+    function giaithua(so) {
+    if (so == 0 || so == 1)
+    return 1;
+    if (f[so] > 0)
+    return f[so];
+  return f[so] = giaithua(so-1) * so;
+    }
+    let so=parseInt(prompt("Nhập vào một số"));
+    alert("Gia thừa của số " + so + " là: "+ giaithua(so));
+ </script>
+
