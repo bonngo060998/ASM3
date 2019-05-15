@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+         <meta charset="UTF-8">
+         <title>Temperature</title>
+     </head>
+     <body>
+     </body>
+</html>
+<script>
+    function Temperature(celsius){
+        this.celsius= celsius;
+    
+    this.getCelsius= function(){
+            return celsius;
+    };
+    this.getFahrenheit= function(){
+            return celsius*1.8+32;
+    };
+    this.getKelvin= function(){
+            return celsius+273.15;
+    };
+    };
+    let temperature= new Temperature(25);
+    let celsius = temperature.getCelsius();
+    let fahrenheit = temperature.getFahrenheit();
+    let kelvin = temperature.getKelvin();
+    alert("Chuyển sang độ F là: " + celsius +  " ; Chuyển sang độ K là: " + kelvin);
+    </script>
