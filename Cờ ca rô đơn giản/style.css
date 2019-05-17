@@ -1,0 +1,14 @@
+#game-board{
+    position: relative;
+    margin-top: 50px;
+}
+.cell{
+    border: solid 1.1px white;
+    text-align: center;
+    font-size:20pt;
+    cursor: pointer;
+    color: blueviolet;
+}
+div {
+    background:pink;
+}
