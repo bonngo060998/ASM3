@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Mô tả điện thoại</title>
+<body>
+<table style="">
+  <tr>
+      <td><input type="submit" name="" id="samsung" value="On/Off" onclick="Onoff(this.value);"> SAMSUNG
+      <p id="powersamsung"></p> </td>
+      <td><input type="submit" name="" id="Iphone" value="On/Off" onclick="Onoff(this.value);"> IPHONE
+          <p id="poweriphone"></p> </td>
+  </tr>
+    <tr>
+        <td>Messenger</td>
+        <td>Messenger</td>
+    </tr>
+   <tr>
+       <td><input name="" id="messsamsung"  style="height:100px "></td>
+       <td><input name="" id="messiphone"  style="height:100px "></td>
+
+   </tr>
+    <tr>
+        <td><input type="submit" name="" id="gui" value="Send" onclick="send()"></td>
+        <td><input type="submit" name="" id="gui2" value="Send" onclick="send1()"></td>
+    </tr>
+    <tr>
+        <td><input type="submit" name="" id="tinden" value="Tin nhan den" onclick="tinden()">
+            <input type="submit" name="" id="tindi" value="Tin nhan di" onclick="tindi()"></td>
+        <td><input type="submit" name="" id="tinden1" value="Tin nhan den" onclick="tinden1()">
+            <input type="submit" name="" id="tindi1" value="Tin nhan di" onclick="tindi1()"></td>
+    </tr>
+    <tr>
+        <td> <input onclick="sacsamsung()" type="submit" value="Sac dien thoai"></td>
+        <td> <input onclick="saciphone()" type="submit" value="Sac dien thoai"></td>
+    </tr>
+</table>
+<script>
+    function Mobile(type,battery,status) {
+            this.type =type ;
+            this.battery=battery;
+            this.status=status;
+        this.isstatus= function(){
+            if (this.status) {
+                alert("Thong bao: Dien thoai dang bat");
+            }else {
+                alert("Thong bao : Dien thoai da tat");
+            }
+        }
+        this.phonestatus= function(){
+            if (this.status) {
+                this.status =false;
+            }else{
+                this.status=true;
+            }
+        }
+        this.power= function(){
+            return this.battery;
+        }
+        this.pin= function() {
+            this.battery -= 1;
+            return this.battery;
+        }
+        this.sac= function() {
+            this.battery = 100;
+            return this.battery;
+        }
+    }
+    let MySamsung= new Mobile('samsung',80,true);
+    document.getElementById("powersamsung").innerHTML = "Pin:"+ MySamsung.power() + "%" ;
+    var MyIphone= new Mobile('Iphone',70,false);
+    document.getElementById("poweriphone").innerHTML = "Pin:"+ MyIphone.power() + "%" ;
+    function Onoff(value) {
+        if (value==='OnOff') {
+            MySamsung.phonestatus();
+        }
+        MySamsung.isstatus();
+    }
+    let arraysend = [];
+    let arraysend1 = [];
+    let tindensamsung = [];
+    let tindeniphone = [];
+    function send() {
+        let send = document.getElementById("messsamsung").value;
+        arraysend.push(send);
+       tindeniphone.push(send);
+       document.getElementById("powersamsung").innerHTML = "Pin:"+ MySamsung.pin() + "%" ;
+    }
+    function tindi() {
+       alert(arraysend);
+        document.getElementById("powersamsung").innerHTML = "Pin:"+ MySamsung.pin() + "%" ;
+    }
+    function tinden() {
+        alert(tindensamsung);
+        document.getElementById("powersamsung").innerHTML = "Pin:"+ MySamsung.pin() + "%" ;
+    }
+    function send1() {
+        let send = document.getElementById("messiphone").value;
+        arraysend1.push(send);
+        tindensamsung.push(send);
+        document.getElementById("poweriphone").innerHTML = "Pin:"+ MyIphone.pin() + "%" ;
+    }
+    function tindi1() {
+       alert(arraysend1);
+        document.getElementById("poweriphone").innerHTML = "Pin:"+ MyIphone.pin() + "%" ;
+    }
+    function tinden1() {
+        alert(tindeniphone);
+        document.getElementById("poweriphone").innerHTML = "Pin:"+ MyIphone.pin() + "%" ;
+    }
+    function sacsamsung() {
+        document.getElementById("powersamsung").innerHTML = "Pin:"+ MySamsung.sac() + "%" ;
+    }
+    function saciphone() {
+        document.getElementById("poweriphone").innerHTML = "Pin:"+ MyIphone.sac() + "%" ;
+    }
+</script>
+</body>
+</html>
