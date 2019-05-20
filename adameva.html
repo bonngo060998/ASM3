@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phát triển ứng dụng nhỏ mô phỏng câu chuyện Adam và Eva</title>
+</head>
+<tr>
+<td>
+    <p id="adam"></p>
+    <p id="weightadam"></p>
+</td>
+<td>
+    <p id="eva"></p>
+    <p id="weighteva"></p>
+</td>
+</tr>
+<tr>
+    <p id="weightapple"></p>
+    <p id="weightconlai"></p>
+</tr>
+<tr>
+<input type="submit" id="adameat" onclick="Adameat()" value="Adam ăn táo">
+<input type="submit" id="evaeat" onclick="Evaeat()" value="Eva ăn táo">
+</tr>
+<body>
+<script>
+    function Apple(weight) {
+        this.weight = weight;
+        this.appleweight= function() {
+            return this.weight;
+        }
+        this.decrease= function() {
+            this.weight -= 1;
+            return this.weight;
+        }
+    }
+    function Human(name,gender,weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+      this.humanname= function(){
+            return this.name;
+       }
+      this.ismale= function (){
+            if(this.gender === "Nam") {
+                return this.gender;
+            } else if (this.gender === "Nữ"){
+                return this.gender;
+            }
+      }
+      this.voice= function (){
+          if (this.name === "Adam") {
+             console.log("Heloo! My name is Adam");
+          } else if (this.name === "Eva") {
+              console.log("Heloo! My name is Eva");
+          }
+      }
+      this.eat= function () {
+            this.weight += 1 ;
+            return this.weight;
+      }
+      this.weighthuman= function() {
+            return this.weight;
+      }
+    }
+let adam = new Human("Adam","Nam",70);
+    document.getElementById("adam").innerHTML = "Tên : " + adam.humanname() + "  -  Giới tính: " + adam.ismale() ;
+    document.getElementById("weightadam").innerHTML ="Cân nặng: " + adam.weighthuman() + " kg";
+let eva = new Human("Eva","Nữ",55);
+    document.getElementById("eva").innerHTML = "Tên : " + eva.humanname() + "  -  Giới tính: " + eva.ismale() ;
+    document.getElementById("weighteva").innerHTML ="Cân nặng: "+ eva.weighthuman() + " kg";
+let apple = new Apple(10,true);
+    document.getElementById("weightconlai").innerHTML = "Trọng lượng còn lại của táo là: " + apple.appleweight() + " kg";
+    function Adameat() {
+        if (apple.appleweight()> 0) {
+            adam.eat();
+            apple.decrease();
+            document.getElementById("weightadam").innerHTML ="Cân nặng: " + adam.weighthuman() + " kg";
+            document.getElementById("weightconlai").innerHTML = "Trọng lượng còn lại của táo là: " + apple.appleweight() + " kg";
+            adam.voice();
+        } else {
+            alert("Hết táo rồi nhé! ");
+        }
+    }
+    function Evaeat() {
+        if (apple.appleweight()> 0) {
+        eva.eat();
+        apple.decrease();
+        document.getElementById("weighteva").innerHTML ="Cân nặng: "+ eva.weighthuman() + " kg";
+        document.getElementById("weightconlai").innerHTML = "Trọng lượng còn lại của quả táo là: " + apple.appleweight() + " kg";
+        eva.voice();
+    } else {
+            alert("Hết táo rồi nhé! ");
+        }
+    }
+</script>
+</body>
+</html>
