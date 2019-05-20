@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mô phỏng đèn pin</title>
+</head>
+<body>
+<p id="power" ></p>
+<input type="submit" id="onoff" value="Bật/Tắt" onclick="Onoff()">
+<input type="submit" id="insertbattery" value="Lắp pin" onclick="Insertbattery()">
+<input type="submit" id="charge" value="Sạc pin" onclick="Charge()">
+<script>
+function Battery(energy) {
+    this.energy = energy; 
+    this.getEnergy= function () {
+       return this.energy;
+    }
+    this.decreaseenergy= function () {
+        this.energy -= 1;
+        return this.energy;
+    }
+    this.pinmax= function () {
+        this.energy = 100;
+        return this.energy;
+    }
+}
+
+function Lamp(status,battery) {
+        this.status = status;
+        this.battery = battery;
+this.lappinstatus= function(){
+            return this.battery;
+        }
+this.batterystatus= function (){
+        if (this.battery) {
+            alert("Thông báo: Đã lắp pin.");
+        } else {
+            alert("Thông báo: Chưa lắp pin");
+        }
+    }
+    this.setbattery= function (){
+        if (this.battery) {
+            this.battery = false;
+        } else {
+            this.battery = true;
+        }
+    }
+    this.statuslamp= function (){
+        if(this.status) {
+            alert("Thông báo: Đèn bật");
+        } else {
+            alert("Thông báo: Đèn tắt");
+        }
+    }
+    this.changestatus= function (){
+        if (this.status) {
+            this.status = false;
+        } else  {
+            this.status = true;
+        }
+    }
+}
+let battery = new Battery(80);
+document.getElementById("power").innerHTML = "Nguồn pin: " + battery.getEnergy() + "%";
+let lamp = new Lamp(false,false);
+function Insertbattery() {
+    lamp.setbattery();
+    lamp.batterystatus();
+}
+function Onoff() {
+    if (lamp.lappinstatus()) {
+        lamp.changestatus();
+        lamp.statuslamp();
+        battery.decreaseenergy();
+        document.getElementById("power").innerHTML = "Nguồn pin: "+ battery.getEnergy() + "%" ;
+    } else {
+        lamp.batterystatus();
+    }
+}
+function Charge() {
+    battery.pinmax();
+    document.getElementById("power").innerHTML = "Nguồn pin: "+ battery.getEnergy() + "%" ;
+}
+</script>
+</body>
+</html>
