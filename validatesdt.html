@@ -6,7 +6,7 @@
 </head>
 <body>
 <script>
-    function isnumberphone(str) {
+    function IsNumberhone(str) {
         let regexp = /^[(0-9)]{4}(?:-[(0-9)]{12})?$/;
         if (regexp.test(str)) {
             return true;
@@ -14,9 +14,9 @@
         return false;
     }
     let numberphone = "(04)-(0978489648)";
-    alert(isnumberphone(numberphone));
+    alert(IsNumberphone(numberphone));
     let numberphone1 = "a4-0978489648";
-    alert(isnumberphone(numberphone1));
+    alert(Isnumberphone(numberphone1));
 </script>
 </body>
 </html>
