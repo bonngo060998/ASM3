@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phát triển chương trình sử dụng Remote để điều khiển Tivi</title>
+</head>
+<body>
+<div id="channel"></div>
+<div id="volume"></div>
+<div id="status"></div>
+<br>
+<input type="button" value="Bật Tivi" onclick="batTivi()">
+<input type="button" value="Tắt Tivi" onclick="tatTivi()">
+<input type="button" value="Volume++" onclick="tangVolume()">
+<input type="button" value="Volume--" onclick="giamVolume()">
+<input type="button" value="Channel++" onclick="channelUpUp()">
+<input type="button" value="Channel--" onclick="channelDownDown()">
+</body>
+<script>
+    function Tivi(channel, volume, status) {
+        this.channel = channel;
+        this.volume = volume;
+        this.status = status;
+        this.checkStatus = function () {
+            if (this.status) {
+                this.status = "Tivi đang bật";
+                return this.status;
+            } else {
+                this.status = "Tivi đã tắt";
+                return this.status;
+            }
+        };
+        this.turnTivi = function () {
+            this.status = !this.status;
+        };
+        this.volumeUp = function () {
+            return this.volume++;
+        };
+        this.volumeDown = function () {
+            return this.volume--;
+        };
+        this.channelUp = function () {
+            this.channel ++;
+        };
+        this.channelDown = function () {
+            this.channel --;
+        }
+    }
+
+    function Remote(model) {
+        this.model = model;
+        this.setTivi = function (tivi) {
+            this.tivi = tivi;
+        };
+        this.turnOffTivi = function () {
+            if (this.tivi.status) {
+                this.tivi.turnTivi();
+            }
+        };
+        this.turnOnTivi = function () {
+            if (!this.tivi.status) {
+                this.tivi.turnTivi();
+            }
+        };
+        this.volumeUpTivi = function () {
+            return this.tivi.volumeUp();
+        };
+        this.volumeDownTivi = function () {
+            return this.tivi.volumeDown();
+        };
+        this.channelUpTivi = function () {
+            return this.tivi.channelUp();
+        }
+        this.channelDownTivi = function () {
+            return  this.tivi.channelDown();
+        }
+    }
+
+    let sharp = new Tivi(12, 50, false);
+    sharp.checkStatus();
+    document.getElementById("channel").innerHTML = "Kênh: " + sharp.channel;
+    document.getElementById("volume").innerHTML = "Âm lượng: " + sharp.volume;
+    document.getElementById("status").innerHTML = "Trạng thái: " + sharp.status;
+
+    let remote = new Remote('A32');
+    remote.setTivi(sharp);
+
+    function batTivi() {
+        remote.turnOnTivi();
+        document.getElementById("status").innerHTML = "Trạng thái: " + sharp.checkStatus();
+    }
+
+    function tatTivi() {
+        remote.turnOffTivi();
+        document.getElementById("status").innerHTML = "Trạng thái: " + sharp.checkStatus();
+    }
+
+    function tangVolume() {
+        remote.volumeUpTivi();
+        document.getElementById("volume").innerHTML = "Âm lượng: " + sharp.volume;
+    }
+
+    function giamVolume() {
+        remote.volumeDownTivi();
+        document.getElementById("volume").innerHTML = "Âm lượng: " + sharp.volume;
+    }
+
+    function channelUpUp() {
+        remote.channelUpTivi();
+        document.getElementById("channel").innerHTML = "Kênh: " + sharp.channel;
+    }
+
+    function channelDownDown() {
+        remote.channelDownTivi();
+        document.getElementById("channel").innerHTML = "Kênh: " + sharp.channel;
+    }
+
+
+</script>
+</html>
