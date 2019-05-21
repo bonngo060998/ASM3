@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 4</title>
+</head>
+<body>
+<script>
+    function IsAccount(str) {
+        let regular =  /^[_a-z0-9]{6,}$/;
+        if (regular.test(str)) {
+            alert("Mật khẩu hợp lệ");
+        }
+        else {
+            alert("Mật khẩu không hợp lệ. Xin vui lòng nhập lại")
+        }
+    }
+    let account = prompt("Nhập vào mật khẩu: ");
+    IsAccount(account);
+</script>
+</body>
+</html>

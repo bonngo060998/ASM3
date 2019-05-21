@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<body>
+    <script>
+        let vowelCount = function(str){
+            let count = 0;
+            for(let i = 0; i < str.length; i++){
+                if(str[i].toLowerCase() == 'a' ||
+                    str[i].toLowerCase() == 'i' ||
+                    str[i].toLowerCase() == 'o' ||
+                    str[i].toLowerCase() == 'e' ||
+                    str[i].toLowerCase() == 'u') {
+                    count+=1;
+                }
+            }
+            return count;
+        }
+
+        let text = prompt("nhập vào một chuổi:  ");
+
+        alert("Số lượng từ nguyên âm trong chuổi là: " + vowelCount(text));
+
+    </script>
+</body>
+</html>
+
+

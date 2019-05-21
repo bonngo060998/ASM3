@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    function IsDayMonthYear(str) {
+        let regexp = /^[1-9]{2,}([/1-9]{2,})([/1-9]{4,})$/;
+        if (regexp.test(str)) {
+            return true;
+        }
+        return false;
+    }
+    let daymonthyear = "16/12/1998";
+    alert(IsDayMonthYear(daymonthyear));
+    let daymonthyear1 = "12-19-198";
+    alert(IsDayMonthYear(daymonthyear1));
+</script>
+</body>
+</html>
