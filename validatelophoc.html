@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Validate lớp học.</title>
+</head>
+<body>
+<script>
+    function classroom(str) {
+        let regexp = /^[CAP]{1,}[0-9]{4}[GHIKLM]{1}$/;
+        if (regexp.test(str)) {
+            return true;
+        }
+        return false;
+    }
+    let nameclass = "C0318K";
+    alert(classroom(nameclass));
+</script>
+</body>
+</html>
