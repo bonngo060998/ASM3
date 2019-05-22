@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Sử dụng thuật toán tìm kiếm số điện thoại Vietel</title>
+</head>
+<body>
+<script>
+    function isViettel(arr) {
+        let regexp = /(086|09[6,7,8]|03[2|3|4|5|6|7|8|9])+([0-9]{7})\b/;
+        for (let i = 0; i < arr.length; i++) {
+            if (regexp.test(arr[i])) {
+                document.write(arr[i]+": là số Vietel"+"<br>");
+            }
+            else {
+                document.write(arr[i]+": không phải là số viettel" + '<br>');
+            }
+        }
+    }
+
+    let numberphone = new Array("0981234567","09656456678","0934407337");
+    isViettel(numberphone);
+</script>
+</body>
+</html>
