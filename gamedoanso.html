@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game đoán số</title>
+</head>
+<body>
+
+</body>
+<script>
+    function printArrayRandom(arr) {
+        // let arr = [];
+        for (let i = 0; i < 100; i++) {
+            arr[i] = Math.floor(Math.random() * 101);
+        }
+
+        arr.sort(function (a, b) {return a - b;});
+
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] += " ";
+            if (i % 10 == 9) {
+                arr[i] += "<br>";
+            }
+        }
+        return arr.join("");
+    }
+
+    function searchNumber(arr,num) {
+        let indexOfNumber = 0;
+        for (let i = 0; i < arr.length; i++ ){
+            if (arr[i] == num){
+                indexOfNumber = i;
+            }
+        }
+        document.write("Tìm thấy số " + num + " ở vị trí " + indexOfNumber);
+    }
+
+    let array = [];
+    let num = parseInt(prompt("Nhập vào 1 số để kiểm tra."));
+    printArrayRandom(array);
+    searchNumber(array,num);
+</script>
+</html>
