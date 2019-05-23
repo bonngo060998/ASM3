@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>JavaScript</h2>
+   <script >
+let numbers = [4,5,23,45,56,56,32,3,5,6,7];
+let max = numbers[0];
+let index = 0;
+let sum = 0;
+let count = 0;
+for (let i = 0; i < numbers.length; i++){
+    if (numbers[i] > max){
+        max = numbers[i];
+        index = i;
+    }
+}
+for (let n = 0; n < numbers.length ; n ++){
+sum += numbers[n];
+count++;
+}
+
+let avg = sum /count
+document.write("Giá trị lớn nhất trong mãng là: " + max + "<br/>");
+document.write("Giá trị trung bình của các phần tử trong mảng là: " + avg);
+
+        </script>
+        </body>
+    
+ 
+         
+        

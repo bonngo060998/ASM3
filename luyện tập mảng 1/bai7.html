@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>JavaScript</h2>
+   <script >
+    let numbers = [4,5,23,45,56,56,32,3,5,6,7];
+    let v=prompt("Nhập vào một số: ");
+    let dem=0;
+    for(let i=0;i<numbers.length;i++){
+        if(numbers[i]=v) {
+          dem++;
+        }
+    }
+        if(dem>0) {
+            alert("Số" + v + " thuộc mảng");
+        }
+            let vitri = numbers.indexOf(v);
+            if(vitri!= -1){ 
+            numbers.splice(vitri,1);
+            document.write("Giá trị của mảng sau khi xóa số đó:" + numbers);
+        }
+        else {
+            document.write("Số" + v + " không thuộc mảng");
+        }
+    </script>
+    </body>

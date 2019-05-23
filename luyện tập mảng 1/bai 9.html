@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 9</title>
+</head>
+<body>
+<script>
+    var n = parseInt(prompt("chieu dai mang",""));
+    var Ar = Array();
+    var a = 0;
+    for (var j =0 ; j <n ; j++) {
+        a =  parseInt(prompt("nhap so thu " + j + ""));
+        Ar.push(a);
+    }
+    document.write(Ar + "<br/>");
+    var Ar2 = Array();
+    var b = 0;
+    for (var j =0 ; j <n ; j++) {
+        b =  parseInt(prompt("nhap so thu " + j + ""));
+        Ar2.push(b);
+    }
+    document.write(Ar2 + "<br/>");
+    var Ar3 = Array();
+    Ar3 = Ar + "," + Ar2;
+        var c = 0;
+        for (var j =0 ; j <n ; j++) {
+            c =  Ar2[j];
+            Ar3 = Ar.push(c);
+    document.write(Ar3 + "<br/>");
+</script>
+</body>
+</html>
