@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra từ đối xứng</title>
+</head>
+<body>
+<script>
+    var n = prompt("chieu dai chuoi","");
+    var Ar = Array();
+    Ar = n.split("");
+    var first = 0;
+    var dem = 0;
+    var last = Ar.length - 1;
+    while (first < last) {
+        if (Ar[first] === Ar[last]) {
+            dem++;
+        }
+        first++;
+        last--;
+    }
+    if (dem !== 0 ) {
+        document.write(" là từ đối xứng ");
+    } else  {
+        document.write("k phải là từ đối xứng ");
+    }
+</script>
+
+</body>
+</html>
