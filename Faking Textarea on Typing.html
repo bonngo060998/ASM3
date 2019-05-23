@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng vui Faking Textarea on Typing</title>
+</head>
+<body>
+<input id="onkeydow" onkeydown="keydown()" value="" style="height: 50px">
+<script>
+    var array = ["x","i","n"," ","c","h","a","o",""];
+    var i = 0;
+    var a ="";
+    function keydown() {
+        if (i <= 8){
+            a += array[i];
+            console.log(a);
+            document.getElementById("onkeydow").value = a;
+            i++;
+        } else {
+            i = 0;
+        }
+        console.log(i);
+    }
+</script>
+</body>
+</html>
