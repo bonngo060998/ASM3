@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<body>
+<script>
+    for (var i=0; i<=20;i++) {
+        switch (i) {
+            case 0:
+                n1=i;
+                document.write("<p>"+ i + "</p>");
+                break;
+            case  1:
+                n2=i;
+                document.write("<p>" + i + "</p>");
+                break;
+            default :
+                n3 = n2 + n1;
+                n1 = n2;
+                n2 =n3;
+                document.write("<p>" + n3 + "</p>");
+        }
+    }
+</script>
+</body>
+</html>

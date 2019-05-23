@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 4</title>
+</head>
+<body>
+<script>
+    var sum = 1;
+    for (var i=0; i<=20;i++) {
+        switch (i) {
+            case 0:
+                n1=i;
+                break;
+            case  1:
+                n2=i;
+                break;
+            default :
+                n3 = n2 + n1;
+                n1 = n2;
+                n2 = n3;
+                if ( n3%5 == 0) {
+                    document.write("<p>" + n3 + "</p>");
+                }
+        }
+    }
+</script>
+</body>
+</html>
