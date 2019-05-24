@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<td>Ngày:</td>
+<td><input id="day" type=”number” /></td>
+<td>Tháng:</td>
+<td><input id="month" type=”number” /></td>
+<td>Năm:</td>
+<td><input id="year" type=”number” /></td>
+<input type="submit" id="ok" onclick="timelive()" value="Tính thời gian">
+
+<td>
+    <p id="timeday"></p>
+    <p id="timemonth"></p>
+    <p id="timeyear"></p>
+    <p id="timehours"></p>
+    <p id="timeminutes"></p>
+    <p id="timeseconds"></p>
+
+    
+</td>
+<script>
+
+    function timelive() {
+        let day = document.getElementById("day").value;
+        let month=document.getElementById("month").value;
+        let year=document.getElementById("year").value;
+
+        let presenday = new Date();
+        presenday.getSeconds();
+        presenday.getMinutes();
+        presenday.getHours();
+        presenday.getDay();
+        presenday.getMonth();
+        presenday.getFullYear();
+
+        let sonam= presenday.getFullYear() - year;
+        let sothang= (presenday.getFullYear() - year)*12;
+        let songay= ((presenday.getFullYear() - year)*12)*365 ;
+        let sogio= ((presenday.getFullYear() - year)*12)*365*24;
+        let sophut=((presenday.getFullYear() - year)*12)*365*24*60;
+        let sogiay=((presenday.getFullYear() - year)*12)*365*24*60*60;
+
+        document.getElementById("timeyear").innerHTML="Bạn đả sống: "+sonam + " năm";
+        document.getElementById("timemonth").innerHTML="Bạn đả sống: "+sothang + " tháng";
+        document.getElementById("timeday").innerHTML="Bạn đả sống: "+songay + " ngày";
+        document.getElementById("timehours").innerHTML="Bạn đả sống: "+sogio + " giờ";
+        document.getElementById("timeminutes").innerHTML="Bạn đả sống: "+sophut + " phút";
+        document.getElementById("timeseconds").innerHTML="Bạn đả sống: "+sogiay + " giây";
+    }
+
+
+</script>
+</body>
+</html>
