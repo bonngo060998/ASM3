@@ -1,0 +1,48 @@
+ <!DOCTYPE html>
+  <html>
+ <meta charset="UTF-8">
+  <head>
+      <title>JS Snake Game</title>
+  </head>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ <style>
+     html, body {
+
+         height: 100%;
+
+         margin: 0;
+
+     }
+     body {
+         background-image: url("razz.png");
+         display: flex;
+
+         align-items: center;
+
+         justify-content: center;
+
+     }
+
+
+     canvas {
+
+         position: absolute;
+         border-width:4px;
+
+     }
+     input{
+         position: absolute;
+         left: 720px;
+         top: 50px;
+
+
+     }
+ </style>
+  <body>
+  <input type="button"  class="btn btn-outline-success" onclick="reloadgame()" value="Chơi lại">
+     <canvas id="canvas" style="" width="500" height="500"></canvas>
+     <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+     <script src="js/script.js"></script>
+
+  </body>
+  </html>
